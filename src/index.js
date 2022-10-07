@@ -13,6 +13,7 @@ const myFileWriter = async (fileName, fileContent) => {
 	// dont chnage function name
 }
 
+
 const myFileReader = async (fileName) => {
 	// write code here
 	fs.readFile(fileName,"utf-8",function(err){
@@ -36,7 +37,7 @@ const myFileUpdater = async (fileName, fileContent) => {
 
 const myFileDeleter = async (fileName) => {
 	// write code here
-	fs.rm(fileName,function(err){
+	fs.unlink(fileName,function(err){
 	if(err){
 	console.error("Could not delete the file");
 	}
