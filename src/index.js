@@ -1,40 +1,23 @@
 const fs = require('fs/promises')
 
 const myFileWriter = async (fileName, fileContent) => {
-	// write code here
-	// fs.writeFile(fileName,fileContent,function(err,fileContent){
-	// 	if(err){
-	// 		console.error("Could not write the file");
-	// 	}
-	// 	else{
-	// 		console.log("Content writen successfully");
-	// 	}
-	// })
 
 	try {
-		fs.writeFileSync(fileName, fileContent);
-		// file written successfully
+		const content = 'Some content!';
+		await fs.writeFile(fileName, fileContent);
 	  } catch (err) {
-		console.error(err);
+		console.log(err);
 	  }
-	// dont chnage function name
 }
-const data={
-	name:"Akash",
-	city:"Satara"
-}
- myFileWriter("Akash.txt","hello akash");
 
 const myFileReader = async (fileName) => {
 	try {
-		const data = fs.readFileSync(fileName, 'utf8');
+		const data = await fs.readFile(fileName, { encoding: 'utf8' });
 		console.log(data);
 	  } catch (err) {
-		console.error(err);
+		console.log(err);
 	  }
 }
-
-
 
 const myFileUpdater = async (fileName, fileContent) => {
 	// write code here
@@ -43,7 +26,6 @@ const myFileUpdater = async (fileName, fileContent) => {
 		console.error("Could not write the file");
 		}
 	})
-	// dont chnage function name
 }
 
 const myFileDeleter = async (fileName) => {
@@ -55,5 +37,5 @@ const myFileDeleter = async (fileName) => {
 	// dont chnage function name
 })
 }
-myFileReader("Akash.txt");
+
 module.exports = { myFileWriter, myFileUpdater, myFileReader, myFileDeleter }
