@@ -13,12 +13,12 @@ const myFileWriter = async (fileName, fileContent) => {
 const myFileReader = async (fileName) => {
 	try {
 		const data = await fs.readFile(fileName, { encoding: 'utf8' });
-		console.log(data);
+		console.log(JSON.stringify(data));
 	  } catch (err) {
 		console.log(err);
 	  }
 }
-
+// myFileReader("./Akash.json")
 const myFileUpdater = async (fileName, fileContent) => {
 	// write code here
 	fs.appendFile(fileName,fileContent,function(err){
