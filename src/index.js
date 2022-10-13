@@ -10,15 +10,17 @@ const myFileWriter = async (fileName, fileContent) => {
 	  }
 }
 
+// myFileWriter("akash.txt","Hello")
 const myFileReader = async (fileName) => {
 	try {
 		const data = await fs.readFile(fileName, { encoding: 'utf8' });
-		console.log(JSON.stringify(data));
+		console.log(data);
 	  } catch (err) {
 		console.log(err);
 	  }
 }
-// myFileReader("./Akash.json")
+
+// myFileReader("akash.txt")     
 const myFileUpdater = async (fileName, fileContent) => {
 	// write code here
 	fs.appendFile(fileName,fileContent,function(err){
@@ -28,6 +30,8 @@ const myFileUpdater = async (fileName, fileContent) => {
 	})
 }
 
+
+// myFileUpdater("akash.txt"," World")
 const myFileDeleter = async (fileName) => {
 	// write code here
 	fs.unlink(fileName,function(err){
@@ -37,5 +41,5 @@ const myFileDeleter = async (fileName) => {
 	// dont chnage function name
 })
 }
-
+// myFileDeleter("akash.txt")
 module.exports = { myFileWriter, myFileUpdater, myFileReader, myFileDeleter }
