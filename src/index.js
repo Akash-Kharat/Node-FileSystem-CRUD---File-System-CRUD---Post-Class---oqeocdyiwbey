@@ -13,8 +13,8 @@ const myFileWriter = async (fileName, fileContent) => {
 // myFileWriter("akash.txt","Hello")
 const myFileReader = async (fileName) => {
 	try {
-		const data = await fs.readFile(fileName, { encoding: 'utf8' });
-		console.log(data);
+		await fs.readFile(fileName, { encoding: 'utf8' }).then(a => console.log(a))
+		// console.log(data);
 	  } catch (err) {
 		console.log(err);
 	  }
