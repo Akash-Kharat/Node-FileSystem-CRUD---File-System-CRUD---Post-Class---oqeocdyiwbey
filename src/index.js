@@ -12,7 +12,7 @@ const myFileWriter = async (fileName, fileContent) => {
 
 const myFileReader = async (fileName) => {
 	try {
-		await fs.readFile(fileName).then(a => console.log(a))
+		await fs.readFile(fileName,{ encoding: 'utf-8'}).then(a => console.log(a))
 
 	  }
 	catch (err) {
@@ -20,6 +20,7 @@ const myFileReader = async (fileName) => {
 	  }  
 }
 
+// myFileReader("akash.txt");
 const myFileUpdater = async (fileName, fileContent) => {
 	// write code here
 	fs.appendFile(fileName,fileContent,function(err){

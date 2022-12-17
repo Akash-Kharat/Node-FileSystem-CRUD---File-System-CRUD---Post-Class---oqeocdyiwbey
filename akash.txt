@@ -1,5 +1,0 @@
-<<<<<<< HEAD
-Hello
-=======
-Hello how are you bro
->>>>>>> c9cb79e5063f742bce505e54115c616a48076c63
