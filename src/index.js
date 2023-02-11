@@ -10,15 +10,14 @@ const myFileWriter = async (fileName, fileContent) => {
 	  }
 }
 
-const myFileReader = async (fileName) => {
-	try {
-		await fs.readFile(fileName,{ encoding: 'utf-8'}).then(a => console.log(a))
+const myFileReader = async (fileName) =>{
 
-	  }
-	catch (err) {
-		console.log(err);
-	  }  
+const content = await fs.readFile(fileName)
+
+return content.toString();
+
 }
+
 
 // myFileReader("akash.txt");
 const myFileUpdater = async (fileName, fileContent) => {
